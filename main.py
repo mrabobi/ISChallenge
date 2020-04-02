@@ -29,6 +29,16 @@ def handle_get_resources(request):
         "status": 403
     }, 403
 
+@app.route("/palatul_culturii")
+def get_palat():
+    li = list()
+    #SELECT latitude, longitude, url, name FROM locations
+    result, msg = db.get_everything_from_locations()
+    for i in range(len(result)):
+        result[i][2] = result[i][2].split("=")[1]
+    return str(result)
+    #return render_template("palat.html")
+    
 
 @app.route("/")
 def index():

@@ -118,3 +118,14 @@ def get_coords(name):
         return result, "result is {}".format(result)
 
     return None, ""
+
+
+def get_everything_from_locations():
+    with db.connect() as conn:
+        stmt = text(
+            "SELECT latitude, longitude, url, name FROM locations"
+        )
+
+        result = conn.execute(stmt).fetchall()
+
+        return result, "result is {}".format(result)

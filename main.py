@@ -36,9 +36,8 @@ def get_palat():
     #SELECT latitude, longitude, url, name FROM locations
     result, msg = db.get_everything_from_locations()
     for i in range(len(result)):
-        result[i][2] = result[i][2].split("=")[1]
+        result[i][2] = result[i][2].split(b"=")[1]
     return str(result)
-    hello
     #return render_template("palat.html")
     
 

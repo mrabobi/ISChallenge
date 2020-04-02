@@ -126,5 +126,7 @@ def get_everything_from_locations():
         )
 
         result = conn.execute(stmt).fetchall()
-
-        return result, "result is {}".format(result)
+        li = list()
+        for index in result:
+            li.append(index)
+        return li, "result is {}".format(result)

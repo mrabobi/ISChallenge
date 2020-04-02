@@ -1,0 +1,3 @@
+Flask==1.1.1
+SQLAlchemy==1.1.5
+pymysql==0.9.3

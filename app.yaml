@@ -1,0 +1,6 @@
+runtime: python37
+env_variables:
+    CLOUD_SQL_CONNECTION_NAME: ischallenge:europe-west1:ischallenge
+    DB_USER: root
+    DB_PASS: parola123
+    DB_NAME: schema

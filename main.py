@@ -2,9 +2,19 @@ import time
 import traceback
 
 from utils import dblib as db
-from flask import Flask, render_template, request, Response
+from flask import Flask
+
+from google.cloud import logging
 
 app = Flask(__name__)
+
+logger = None
+
+def init_logging():
+    global logger
+    logging_client = logging.Client()
+    logger = logging_client.logger(__name__)
+    logger.log_text("Created logger")
 
 
 @app.route("/get", methods=["GET"])
@@ -28,7 +38,10 @@ def index():
     # location = db.get_location_id("Palatul Culturii")
     # if user and location:
     #     db.user_add_new_challange(user, location)
+    logger.log_text("Hello world!")
     return "Hello World!"
 
+
 if __name__ == "__main__":
+    init_logging()
     app.run(host="127.0.0.1", port=8080, debug=True)

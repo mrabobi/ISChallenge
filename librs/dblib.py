@@ -4,7 +4,6 @@ import traceback
 from datetime import datetime
 
 from sqlalchemy import create_engine, engine, text
-from sqlalchemy import Table, Column, Integer, MetaData, ForeignKey, TIMESTAMP, String
 
 cloud_sql_connection_name = os.getenv("CLOUD_SQL_CONNECTION_NAME")
 db = create_engine(

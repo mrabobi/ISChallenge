@@ -1,7 +1,7 @@
 import time
 import traceback
 
-from utils import dblib as db
+from librs import dblib as db
 from flask import Flask
 
 from google.cloud import logging
@@ -38,6 +38,7 @@ def get_palat():
     for i in range(len(result)):
         result[i][2] = result[i][2].split("=")[1]
     return str(result)
+    hello
     #return render_template("palat.html")
     
 

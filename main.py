@@ -29,6 +29,7 @@ def handle_get_resources(request):
         "status": 403
     }, 403
 
+
 @app.route("/palatul_culturii")
 def get_palat():
     li = list()
